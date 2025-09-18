@@ -16,7 +16,7 @@ public class ClaimConclusionTest {
         assertNotNull(ClaimConclusion.REJECT);
         assertNotNull(ClaimConclusion.CANCEL);
 
-        assertEquals("NORMAL", ClaimConclusion.FULL.name());
+        assertEquals("FULL", ClaimConclusion.FULL.name());
         assertEquals("PART", ClaimConclusion.PART.name());
         assertEquals("AGREEMENT", ClaimConclusion.AGREEMENT.name());
         assertEquals("EXGRATIA", ClaimConclusion.EXGRATIA.name());

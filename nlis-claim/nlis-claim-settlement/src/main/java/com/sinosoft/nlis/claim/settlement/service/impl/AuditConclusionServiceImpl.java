@@ -31,6 +31,7 @@ public class AuditConclusionServiceImpl implements AuditConclusionService {
         String auditback = "审核回退";
         // 获取理赔项目的给付状态代码列表
         List<String> benefitCodes = getBenefitCodes(claimItems);
+        logger.info("给付状态：{}", benefitCodes);
 
         // 当“给付状态”全部为给付，或者同时含给付和不承担，不含其他，那么审核结论只能是正常赔付或审核回退，否则提示“给付结论与审核结论不符，请核实”。
         if (benefitCodes.size() == 1 && BenefitStatus.JF.getCode().equals(benefitCodes.get(0))
@@ -109,7 +110,7 @@ public class AuditConclusionServiceImpl implements AuditConclusionService {
         if (claimItems != null && !claimItems.isEmpty()) {
             for (ClaimItem item : claimItems) {
                 String code = item.getBenefitCode();
-                if (code != null && !code.trim().isEmpty() && !benefitCodes.contains(code)) {
+                if (!benefitCodes.contains(code)) {
                     benefitCodes.add(code);
                 }
             }

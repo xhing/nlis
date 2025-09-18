@@ -8,7 +8,6 @@ import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import com.sinosoft.nlis.claim.settlement.dto.ClaimItem;
@@ -17,15 +16,23 @@ import com.sinosoft.nlis.claim.settlement.service.impl.AuditConclusionServiceImp
 
 public class AuditConclusionServiceTest {
     
-    //@Mock
-    //private AuditMapper auditMapper;
-
     private AuditConclusionService auditConclusionService;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this); // Initialize mocks
         auditConclusionService = new AuditConclusionServiceImpl(); // Inject mocks into the service
+    }
+
+    @Test
+    void testCheck_withBenefitCode_Empty() {
+        List<ClaimItem> claimItems = new ArrayList<ClaimItem>();
+        // 给付
+        ClaimItem item1 = new ClaimItem();
+        claimItems.add(item1);
+
+        boolean result = auditConclusionService.check(claimItems, "正常赔付");
+        assert(result == false);
     }
 
     @Test

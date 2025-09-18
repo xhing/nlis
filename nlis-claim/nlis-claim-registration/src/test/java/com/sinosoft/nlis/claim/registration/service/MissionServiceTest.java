@@ -36,8 +36,6 @@ public class MissionServiceTest {
         String missionid = "0";
         String flag = "0";
 
-        //List<MissionPoolDto> mockMissionPoolList = new ArrayList<MissionPoolDto>();
-
         // 设置mock行为
         when(missionMapper.getComCodeConf(comcode)).thenReturn("0");
         when(missionMapper.getOwnerlessPools(comcode, missionid, flag)).thenReturn(null);
