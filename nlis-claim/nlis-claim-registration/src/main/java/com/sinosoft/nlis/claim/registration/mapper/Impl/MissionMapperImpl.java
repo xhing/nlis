@@ -30,21 +30,24 @@ public class MissionMapperImpl implements MissionMapper {
     public String getComCodeConf(String comcode) {
         if (comcode == null || comcode.isEmpty()) {
             throw new RuntimeException("立案工作池中还没有配置该机构。");
+        } else if (comcode.equals("0")) {
+            return "0";
+        } else {
+            return "C0001";
         }
-
-        return "C0001";
     }
 
     @Override
     public List<MissionPoolDto> getOwnerlessPools(String comcode, String missionid, String flag) {
+        List<MissionPoolDto> list = null;
         if (comcode == null || comcode.isEmpty() || missionid == null || missionid.isEmpty() || flag == null || flag.isEmpty()) {
             throw new RuntimeException("立案工作池中还没有符合该机构及任务信息的立案案件。");
+        } else if (!comcode.equals("0") && !missionid.equals("0") && !flag.equals("0")) {
+            list = new ArrayList<MissionPoolDto>();
+            MissionPoolDto mp1 = new MissionPoolDto();
+            mp1.setRgtno("R00001");
+            list.add(mp1);
         }
-
-        List<MissionPoolDto> list = new ArrayList<MissionPoolDto>();
-        MissionPoolDto mp1 = new MissionPoolDto();
-        mp1.setRgtno("R00001");
-        list.add(mp1);
 
         return list;
     }

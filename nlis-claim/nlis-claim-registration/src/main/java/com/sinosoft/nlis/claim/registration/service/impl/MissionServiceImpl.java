@@ -32,14 +32,11 @@ public class MissionServiceImpl implements MissionService {
             comcode = comCodeConf;
         }
         List<MissionPoolDto> selflist = missionMapper.getOwnerlessPools(comcode, missionid, flag);
-        if (null == selflist || selflist.size() == 0) {
-            // 如果没有可申领案件，返回0
-            logger.info(comCodeConf + "机构下没有可申领案件");
-            return 0;
-        } else {
-            // 返回可申领案件数目
-            return selflist.size();
-        }
+        // 返回可申领案件数目
+        int cases_count  = selflist.size();
+        logger.info("{}可申领案件数目为：{}", operator, cases_count);
+        return cases_count;
+
     }
 
     @Override
