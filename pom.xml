@@ -312,6 +312,8 @@
         <configuration>
           <skipTests>${test.skip}</skipTests>
           <testFailureIgnore>false</testFailureIgnore>
+          <!-- fix using mockito in test occur some warn and error about java agent has been loaded dynamically -->
+          <argLine>-XX:+EnableDynamicAgentLoading</argLine>
         </configuration>
       </plugin>
       <plugin>

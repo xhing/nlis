@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.sinosoft.nlis.claim.registration.service.MissionServiceTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.668 s <<< FAILURE! - in com.sinosoft.nlis.claim.registration.service.MissionServiceTest
-com.sinosoft.nlis.claim.registration.service.MissionServiceTest.testCountPendingCases_0_0_0  Time elapsed: 0.461 s  <<< ERROR!
-java.lang.NullPointerException: Cannot invoke "java.util.List.size()" because "selflist" is null
-	at com.sinosoft.nlis.claim.registration.service.MissionServiceTest.testCountPendingCases_0_0_0(MissionServiceTest.java:50)
-

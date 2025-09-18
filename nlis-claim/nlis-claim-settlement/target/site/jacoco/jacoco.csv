@@ -1,5 +1,0 @@
-GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-nlis-claim-settlement,com.sinosoft.nlis.claim.settlement.dto,ClaimItem,3,14,0,0,1,6,1,4,1,4
-nlis-claim-settlement,com.sinosoft.nlis.claim.settlement.service.impl,AuditConclusionServiceImpl,143,187,84,38,15,33,57,7,0,3
-nlis-claim-settlement,com.sinosoft.nlis.claim.settlement.enums,BenefitStatus,0,49,0,0,0,10,0,3,0,3
-nlis-claim-settlement,com.sinosoft.nlis.claim.settlement.enums,ClaimConclusion,0,56,0,0,0,11,0,3,0,3
